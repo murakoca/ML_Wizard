@@ -1,12 +1,10 @@
-echo __pycache__/ >> .gitignore
-echo *.pyc >> .gitignore
-echo *.pyo >> .gitignore
-
-# Git'ten de temizle
-git rm -r --cached __pycache__/ 2>nul
-git rm -r --cached stages/__pycache__/ 2>nul
-git rm -r --cached utils/__pycache__/ 2>nul
-
-# .gitignore ekle ve commit
-git add .gitignore
-git commit -m "Added .gitignore, removed __pycache__"
+__pycache__/ 
+*.pyc 
+*.pyo 
+*.pyd 
+.Python 
+env/ 
+venv/ 
+*.egg-info/ 
+dist/ 
+build/ 
