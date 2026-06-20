@@ -20,6 +20,13 @@ class MainWindow(QMainWindow):
         from stages.stage_03_data_engineering import Stage03DataEngineering
         from stages.stage_04_classical_ml import Stage04ClassicalML
         from stages.stage_05_core_ml import Stage05CoreML
+        from stages.stage_06_deep_learning_cv import Stage06DeepLearningCV
+        from stages.stage_07_llm_nlp import Stage07LLMNLP
+        from stages.stage_08_agentic_ai import Stage08AgenticAI
+        from stages.stage_09_reinforcement_learning import Stage09RL
+        from stages.stage_10_interpretability import Stage10Interpretability
+        from stages.stage_11_mlops import Stage11MLOps
+        from stages.stage_12_research import Stage12Research
         
         central = QWidget()
         self.setCentralWidget(central)
@@ -49,7 +56,7 @@ class MainWindow(QMainWindow):
             self.stage_list.addItem(item)
         hbox.addWidget(self.stage_list)
 
-        # Stacked widget - içerik alanı
+        # Stacked widget - tüm 12 stage
         self.stack = QStackedWidget()
         self.stage_widgets = [
             Stage01Math(self.settings),
@@ -57,13 +64,13 @@ class MainWindow(QMainWindow):
             Stage03DataEngineering(self.settings),
             Stage04ClassicalML(self.settings),
             Stage05CoreML(self.settings),
-            self._placeholder("Deep Learning & CV"),
-            self._placeholder("LLM & NLP"),
-            self._placeholder("Agentic AI"),
-            self._placeholder("Reinforcement Learning"),
-            self._placeholder("Model Interpretability"),
-            self._placeholder("MLOps & Deployment"),
-            self._placeholder("Research Literacy")
+            Stage06DeepLearningCV(self.settings),
+            Stage07LLMNLP(self.settings),
+            Stage08AgenticAI(self.settings),
+            Stage09RL(self.settings),
+            Stage10Interpretability(self.settings),
+            Stage11MLOps(self.settings),
+            Stage12Research(self.settings)
         ]
 
         for i, w in enumerate(self.stage_widgets):
@@ -74,17 +81,6 @@ class MainWindow(QMainWindow):
             self.stack.addWidget(w)
 
         hbox.addWidget(self.stack)
-
-    def _placeholder(self, text):
-        """Henüz implemente edilmemiş aşamalar için yer tutucu"""
-        from PyQt5.QtWidgets import QLabel, QVBoxLayout, QWidget
-        w = QWidget()
-        lay = QVBoxLayout()
-        lbl = QLabel(f"<h2>{text}</h2><p style='color:#aaa;'>Coming in next update...</p>")
-        lbl.setAlignment(Qt.AlignCenter)
-        lay.addWidget(lbl)
-        w.setLayout(lay)
-        return w
 
     def _connect_list(self):
         """Sidebar liste tıklamasını stack widget'a bağla"""
