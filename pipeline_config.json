@@ -1,0 +1,13 @@
+{
+  "core_ml": {
+    "data_path": "C:/Users/Murat/Downloads/titanic.csv"
+  },
+  "data_eng": {
+    "data_path": "C:/Users/Murat/Downloads/titanic.csv",
+    "synthetic": true,
+    "task": "classification"
+  },
+  "classical_ml": {
+    "data_path": "C:/Users/Murat/Downloads/titanic.csv"
+  }
+}
